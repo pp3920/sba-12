@@ -1,11 +1,12 @@
 const express = require("express");
 const router = express.Router();
 
-const movieContoller = require("../controllers/movieController")
+const movieController = require("../controllers/movieController");
 
-router.get("/search", movieContoller.searchbyMovie );
+// Search Movies
+router.get("/search", movieController.searchMovie);
 
-router.get("/movies/:id" , movieContoller.getbyid)
-
+// Movie Details
+router.get("/movies/:id", movieController.getMovieDetails);
 
 module.exports = router;

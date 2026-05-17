@@ -3,22 +3,22 @@ const app = express();
 require('dotenv').config();
 const PORT = process.env.PORT;
 
-//importing movie
+//Middleware
 
 const movieRoute = require("./routes/movieRoutes")
 
-app.use("/api", movieRoute )      // MIDDLEWARE
+//Routes
 
+app.use("/api", movieRoute )    
+
+
+//Home Routes
 app.get ("/test", (req,res) => {
     res.send("Starting Application...")
 
 })
 
-
-
-
-
-
+//Server
 app.listen(PORT, () => {
     console.log(`Running on PORT: ${PORT}`)
 })
